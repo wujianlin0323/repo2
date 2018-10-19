@@ -1,0 +1,80 @@
+server:
+  port: 20000
+  session-timeout: 1000000
+  tomcat.uri-encoding: UTF-8
+  tomcat.compression: on#Tomcat
+
+#rabbmit
+spring:
+  activemq:
+    broker-url: tcp://127.0.0.1:61616
+    #broker-url: tcp://192.168.63.224:61616
+    username: admin
+    password: admin
+    in-memory: true
+    pool:
+      enabled: false
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@192.168.63.224:1521:fztestdb
+    username: fzcore
+    password: fzcore
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    logSlowSql: true
+  application:
+    name: @project.name@
+  boot:
+    admin:
+      client:
+        url: http://localhost:8000
+        instance:
+          prefer-ip: true
+        api-path: instances
+        username: admin
+        password: 123
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  server:
+    port: 21000
+
+#榕城通
+kp:
+  rct:
+    name: 航信测试企业
+    taxno: 350100888888001
+    addressAndtel: 福州市软件园G区18号楼 400877618-1
+    bank: 工商银行福州铜盘支行  1402201409600003603
+    kpy: 张三
+  hx:
+   webservice_url_kp: http://110.83.51.109:10080/zzs_kpfw/webservice/eInvWS/350100888888001
+   webservice_url_qz: http://ei-test.51fapiao.cn:28888/fpqz/webservice/eInvWS
+   platform_erpcode: 111I2JJX
+   platform_registrationcode: 02585320
+   platform_authorizationcode: 3588888001
+  pdf:
+    path: /app/fzsmk/pdf
+
+appKey: 798F5DDE5E026C112
+mybatis:
+  type-aliases-package: com.jieyi.entity
+logging:
+  file: /app/fzsmk/log/OfflineInvoice.log
+
+
+
+

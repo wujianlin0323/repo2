@@ -1,0 +1,82 @@
+server:
+  port: 20000
+  session-timeout: 1000000
+  tomcat.uri-encoding: UTF-8
+  tomcat.compression: on#Tomcat
+
+
+#rabbmit
+spring:
+  activemq:
+      broker-url: tcp://127.0.0.1:61616
+      username: admin
+      password: admin
+      in-memory: true
+      pool:
+        enabled: false
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    #url: jdbc:oracle:thin:@10.11.21.6:1521:qsdb
+    url: jdbc:oracle:thin:@192.168.63.224:1521:fztestdb
+    #username: fzcore
+    #password: fzrcykt123
+    username: fzcore
+    password: fzcore
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    filters: stat,wall,log4j
+    logSlowSql: true
+  application:
+    name: @project.name@
+  boot:
+    admin:
+      client:
+        url: http://localhost:8000
+        instance:
+          prefer-ip: true
+        api-path: instances
+        username: admin
+        password: 123
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  server:
+    port: 21000
+
+#榕城通
+kp:
+  rct:
+    name: 福州榕城一卡通有限责任公司
+    taxno: 91350100662834258G
+    addressAndtel: 福建省福州市鼓楼区梁厝路2号华雄大厦3号楼13层 0591-87815033
+    bank: 工商银行福州市五四支行 1402020309007003501
+    kpy: 邹
+  hx:
+   webservice_url_kp: http://10.11.1.52:10080/zzs_kpfw/webservice/eInvWS/91350100662834258G
+   webservice_url_qz: http://qzfw.51fapiao.cn:20080/fpqz/webservice/eInvWS?wsdl
+   #平台编码
+   platform_erpcode: P0000001
+   #注册码
+   platform_registrationcode: 02166136
+   #授权码
+   platform_authorizationcode: 6EZQ5CYQJ9
+  pdf:
+    path: /app/fzsmk/pdf
+
+appKey: 798F5DDE5E026C112
+mybatis:
+  type-aliases-package: com.jieyi.entity
+logging:
+  file: /app/fzsmk/log/OfflineInvoice.log
