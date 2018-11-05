@@ -1,0 +1,142 @@
+<html xmlns:th="http://www.springframework.org/schema/mvc">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 引入样式 -->
+    <link rel="stylesheet" th:href="@{/files/css/common.css}">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <link rel="stylesheet" th:href="@{/files/css/helpAgeBase.css}">
+</head>
+
+<body>
+<div id="helpAgeContent">
+    <el-tabs v-model="activeTab" type="card">
+        <!-- 到家助老活动列表 开始 -->
+        <el-tab-pane label="到家助老活动列表" name="first">
+            <el-form :model="queryCondition" ref="queryCondition" class="top-input-box">
+                <div>
+                    <el-form-item label="" prop="code" class="i-block mr-40">
+                        <label>活动编号*：</label>
+                        <el-input size="small" v-model="queryCondition.code"></el-input>
+                    </el-form-item>
+                    <el-form-item prop="name" class="i-block">
+                        <label>活动名称*：</label>
+                        <el-input size="small" v-model="queryCondition.name"></el-input>
+                    </el-form-item>
+                </div>
+                <div>
+                    <el-form-item prop="time" class="i-block mr-20">
+                        <label>活动时间*：</label>
+                        <el-date-picker v-model="queryCondition.time" type="daterange" start-placeholder="开始日期" end-placeholder="结束日期" :default-time="['00:00:00', '23:59:59']">
+                        </el-date-picker>
+                    </el-form-item>
+                    <el-form-item prop="storeName" class="i-block mr-20">
+                        <label>活动门店*：</label>
+                        <el-input size="small" v-model="queryCondition.storeName"></el-input>
+                    </el-form-item>
+                    <el-form-item prop="storeName" class="i-block">
+                        <label>审核状态 ：</label>
+                        <el-select v-model="queryCondition.status" placeholder="请选择">
+                            <el-option label="草稿" value="1"></el-option>
+                            <el-option label="已审核" value="2"></el-option>
+                            <el-option label="待审核" value="3"></el-option>
+                            <el-option label="已停用" value="4"></el-option>
+                        </el-select>
+                    </el-form-item>
+                </div>
+                <el-button type="primary" @click="submitForm('queryCondition')">查询</el-button>
+                <el-button @click="resetForm('queryCondition')">重置</el-button>
+            </el-form>
+            <div class="query-content">
+                <el-table :data="queryResult" border>
+                    <el-table-column align="center" type="index" label="序号" width="60">
+                    </el-table-column>
+                    <el-table-column align="center" prop="number" label="助老期刊编号" width="150">
+                    </el-table-column>
+                    <el-table-column align="center" prop="name" label="助老期刊名称" width="150">
+                    </el-table-column>
+                    <el-table-column align="center" prop="store" label="参与门店" width="200">
+                    </el-table-column>
+                    <el-table-column align="center" prop="startTime" label="开始时间" width="150">
+                    </el-table-column>
+                    <el-table-column align="center" prop="endTime" label="结束时间" width="150">
+                    </el-table-column>
+                    <el-table-column align="center" prop="statusName" label="审核状态" width="100">
+                    </el-table-column>
+                    <el-table-column align="center" label="操作" width="150">
+                        <template slot-scope="scope">
+                            <!--
+                                2 草稿: 编辑 提交 打印
+                                3 待审核: 查看 审核 驳回
+                                1 已审核: 查看 停用 打印
+                                0 已停用:查看
+                            -->
+                            <el-button
+                                    @click.native.prevent="deleteRow(scope.$index, queryResult)"
+                                    type="text"
+                                    v-if="queryResult[scope.$index].status ==='0'
+                                      || queryResult[scope.$index].status ==='1'
+                                      || queryResult[scope.$index].status ==='3'"
+                                    size="small">
+                                查看
+                            </el-button>
+                            <el-button
+                                    @click.native.prevent="deleteRow(scope.$index, queryResult)"
+                                    type="text"
+                                    v-if="queryResult[scope.$index].status ==='2'"
+                                    size="small">
+                                提交
+                            </el-button>
+                            <el-button
+                                    @click.native.prevent="deleteRow(scope.$index, queryResult)"
+                                    type="text"
+                                    v-if="queryResult[scope.$index].status ==='2'"
+                                    size="small">
+                                编辑
+                            </el-button>
+                            <el-button
+                                    @click.native.prevent="deleteRow(scope.$index, queryResult)"
+                                    type="text"
+                                    v-if="queryResult[scope.$index].status ==='3'"
+                                    size="small">
+                                审核
+                            </el-button>
+                            <el-button
+                                    @click.native.prevent="deleteRow(scope.$index, queryResult)"
+                                    type="text"
+                                    v-if="queryResult[scope.$index].status ==='1'"
+                                    size="small">
+                                停用
+                            </el-button><el-button
+                                @click.native.prevent="deleteRow(scope.$index, queryResult)"
+                                type="text"
+                                v-if="queryResult[scope.$index].status ==='3'"
+                                size="small">
+                            驳回
+                        </el-button>
+                            <el-button
+                                    @click.native.prevent="deleteRow(scope.$index, queryResult)"
+                                    type="text"
+                                    v-if="queryResult[scope.$index].status ==='1'
+                                      || queryResult[scope.$index].status ==='2'"
+                                    size="small">
+                                打印
+                            </el-button>
+                        </template>
+                    </el-table-column>
+                </el-table>
+            </div>
+        </el-tab-pane>
+        <!-- 到家助老活动列表 结束 -->
+    </el-tabs>
+
+    <el-dialog :visible.sync="visible" title="Hello world">
+        <p>欢迎使用 Element</p>
+    </el-dialog>
+</div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script th:src="@{/files/js/activeList.js}"></script>
+</html>

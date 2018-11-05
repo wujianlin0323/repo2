@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/haoya-car-springboot.iml" filepath="$PROJECT_DIR$/haoya-car-springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro-core-all/pro-core-all.iml" filepath="$PROJECT_DIR$/pro-core-all/pro-core-all.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro-desk-service/pro-desk-service.iml" filepath="$PROJECT_DIR$/pro-desk-service/pro-desk-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro-desk-web/pro-desk-web.iml" filepath="$PROJECT_DIR$/pro-desk-web/pro-desk-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro-manager-service/pro-manager-service.iml" filepath="$PROJECT_DIR$/pro-manager-service/pro-manager-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro-manager-web/pro-manager-web.iml" filepath="$PROJECT_DIR$/pro-manager-web/pro-manager-web.iml" />
+    </modules>
+  </component>
+</project>

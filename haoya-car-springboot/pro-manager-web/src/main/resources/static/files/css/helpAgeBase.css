@@ -1,0 +1,28 @@
+/* 活动列表 */
+.nav{
+	margin-bottom: 10px;
+}
+.el-input{
+	max-width: 150px;
+}
+.top-input-box{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 20px;
+}
+.query-content{
+	margin-top: 30px;
+}
+/* 活动查询 */
+.info-top-box{
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+.add-store-dialog
+.add-store-dialog .el-form-item{
+	margin-bottom: 5px;
+}
+/* 价格调整 */
+
+.el-table .strong-row{
+	background: #f0f9eb;
+}

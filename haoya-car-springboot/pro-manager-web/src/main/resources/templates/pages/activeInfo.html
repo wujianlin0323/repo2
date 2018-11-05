@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<!-- 引入样式 -->
+	<link rel="stylesheet" href="../files/css/common.css">
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<link rel="stylesheet" href="../files/css/helpAgeBase.css">
+</head>
+
+<body>
+	<div id="helpAgeContent">
+		<el-tabs v-model="activeTab" type="card">
+			<!-- 到家助老活动列表 开始 -->
+			<el-tab-pane label="到家助老活动查询" name="first">
+				<el-form class="info-top-box">
+					<el-form-item label="活动编号*:">
+				  		<span>1810-01</span>
+				  	</el-form-item>
+					<el-form-item label="活动名称*:">
+				  		<span>到家助老活动名称</span>
+				  	</el-form-item>
+					<el-form-item label="活动时间*:">
+				  		<span>2018/02/02 - 2018/03/02</span>
+				  	</el-form-item>
+					<el-form-item label="活动门店*:">
+						<div class="u-cont">
+							<b class="i-list i-block">华联标超铜川店</b>
+							<b class="i-list i-block">华联标超铜川店</b>
+							<b class="i-list i-block">华联标超铜川店</b>
+							<b class="i-list i-block">华联标超铜川店</b>
+							<b class="i-list i-block">华联标超铜川店</b>
+							<b class="i-list i-block">华联标超铜川店</b>
+						</div>
+				  	</el-form-item>
+				</el-form>
+				<div class="info-table">
+					<el-table :data="activeGoodsData">
+						<el-table-column type="expand">
+							<template slot-scope="props">
+						        <el-table :data="activeGoodsData[props.$index].storeList" border style="width:50%;margin:0 auto;">
+									<el-table-column label="序号" width="60" align="center" type="index" prop="id">
+  		  							</el-table-column>
+									<el-table-column label="门店编码" align="center" prop="storeCode">
+  		  							</el-table-column>
+									<el-table-column label="门店名称" align="center" prop="storeName">
+  		  							</el-table-column>
+									<el-table-column label="到家售价" align="center" prop="basePrice">
+  		  							</el-table-column>
+								</el-table>
+					        </template>
+						</el-table-column>
+						<el-table-column label="序号" type="index" prop="id" align="center">
+						</el-table-column>
+						<el-table-column label="订货码" prop="code" align="center">
+						</el-table-column>
+						<el-table-column label="商品编码" prop="goodsId" align="center">
+						</el-table-column>
+						<el-table-column label="商品名称" prop="goodsName" align="center">
+						</el-table-column>
+						<el-table-column label="助老活动价" prop="price" align="center">
+						</el-table-column>
+					</el-table>
+					<div class="center mt-30">
+						<el-button>导出订货码</el-button>
+						<el-button>打印详情</el-button>
+					</div>
+				</div>
+			</el-tab-pane>
+			<!-- 到家助老活动列表 结束 -->
+		</el-tabs>
+	</div>
+</body>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="../files/js/activeInfo.js"></script>
+
+</html>

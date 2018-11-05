@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="pro-core-all" />
+        <module name="pro-desk-service" />
+        <module name="pro-desk-web" />
+        <module name="pro-manager-service" />
+        <module name="pro-manager-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="haoya-car-springboot" target="1.8" />
+      <module name="pro-core-all" target="1.8" />
+      <module name="pro-desk-service" target="1.8" />
+      <module name="pro-desk-web" target="1.8" />
+      <module name="pro-manager-service" target="1.8" />
+      <module name="pro-manager-web" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

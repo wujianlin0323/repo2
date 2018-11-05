@@ -1,0 +1,3 @@
+com\my\dto\common\ReturnDto.class
+com\my\model\User.class
+com\my\mapper\UserMapper.class
