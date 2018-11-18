@@ -10,7 +10,7 @@ Page({
   data: {
       // nav 初始化
       // cas picker
-      casArray: ['美发','美容','美甲','美睫'],
+      casArray: ['轿车','商务车','中巴车','大巴车'],
       casIndex:0,
       // addr picker
       addrArray: util.replacePhone(fileData.userData().addrs,false),
@@ -29,7 +29,7 @@ Page({
   // 跳转至详情页
   navigateDetail: function(e){
     wx.navigateTo({
-      url:'../technicain_detail/technicain_detail?artype=' + e.currentTarget.dataset.arid
+      url: '../detail/detail?artype=' + e.currentTarget.dataset.artype
     })
   },
   // 加载更多
@@ -55,6 +55,11 @@ Page({
     console.log('Category picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       addrIndex: e.detail.value
+    })
+  },
+ bookTap: function (e) {
+    wx.navigateTo({
+      url: '../book/book?aid=' + e.currentTarget.dataset.aid
     })
   }
 

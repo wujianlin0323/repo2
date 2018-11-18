@@ -1,5 +1,5 @@
 /**route.wxss**/
-.container{
+/* .container{
     padding:0rpx;
     margin:0rpx;
 }
@@ -68,4 +68,72 @@ navigator{
     font-size:32rpx;
     text-align: center;
     color:#d24a58;
+} */
+
+.user-header {
+    width: 100%;
+    height: 448rpx;
+    margin-bottom: 20rpx;
+    padding-top: 75rpx;
+    box-sizing: border-box;
+    background: linear-gradient(to top left,#595959,#bcbcbc);
 }
+
+.user-view{
+    text-align: center;  
+}
+.user-img {
+    width: 196rpx;
+    height: 196rpx;
+    margin: 0 auto 42rpx;
+    text-align: center;
+    background-color: rgb(255,255,255);
+    border-radius: 50%;
+    box-shadow: 1rpx 4rpx 5rpx #5b5b5b;   
+}
+.user-header .login-btn {
+    width: 300rpx;
+    height: 80rpx;
+    margin: 0 auto;
+    line-height: 80rpx;
+    text-align: center;
+    color: rgb(255,255,255);
+    border: 1rpx solid rgb(255,255,255);
+    border-radius: 4rpx;
+    box-sizing: border-box;
+}
+
+.user-header .other-button-hover {
+    background-color: rgb(255,255,255);
+}
+.mt{
+  margin-top: 30rpx;
+}
+.user-article {
+    background-color: rgb(255,255,255);
+}
+
+.user-order {
+    display: flex;
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    padding: 0 20rpx;
+    border-bottom: 1rpx solid rgb(216,216,216);
+    box-sizing: border-box;
+}
+
+.user-order .order-all {
+    width: 95%;
+    font-size: 28rpx;
+    color: rgb(102,102,102);
+}
+
+.user-order .order-look {
+    font-size: 24rpx;
+    color: rgb(153,153,153);
+}
+.icon-right{
+  float: right;
+}
+

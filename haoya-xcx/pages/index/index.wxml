@@ -21,16 +21,29 @@
       </swiper>
   </view>
   <!--nav-->
-  <view class="nav_top">
+  <!-- <view class="nav_top">
     <block wx:for="{{navTopItems}}" wx:key="item.id">
       <view class="nav_top_items {{curNavId == item.id ? 'active_'+colors[index] : ''}}" bindtap="switchTab" data-index="{{index}}" data-id="{{item.id}}">
         <image src="{{item.icon}}" mode="aspectFill"></image>
         <text>{{item.title}}</text>
       </view>
     </block>
-  </view>
+  </view> -->
+  <!--热门专题 begin-->
+	<view class="some-room mt30 clearfix">
+		<view class="sroom-l box-sizing fl"><navigator url=""><image src="../../images/default_pic.png" alt=""></image></navigator></view>
+		<view class="sroom-r fr">
+			<view><navigator url=""><image src="../../images/default_pic.png" alt=""></image></navigator></view>
+			<view><navigator url=""><image src="../../images/default_pic.png" alt=""></image></navigator></view>
+		</view>
+	</view>
+<!--热门专题 end-->
   <!--list-->
   <view class="nav_section">
+  		<view class="like-top">
+			<view class="liketop-name">猜你喜欢</view>
+			<view class="liketop-line"></view>
+		  </view>
     <view wx:if="{{list[curIndex]}}">
         <block wx:for="{{list[curIndex]}}" wx:key="item.id">
             <view class="nav_section_items" >
@@ -52,15 +65,19 @@
                     <view>{{item.message}}</view>
                 </view>
                 <!--book-->
-                <view class="section_book" bindtap="bookTap" data-aid="{{item.id}}">
+                <view class="section_book" bindtap="navigateDetail" data-aid="{{item.id}}">
                         <text>预约</text>
                 </view>
             </view>
             
         </block>
     </view>
-    
     <view wx:else>暂无数据</view>
+
+   
+
+
+    
 
 </view>
 

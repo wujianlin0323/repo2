@@ -28,6 +28,11 @@ Page( {
           bookToastHidden:false
       })
   },
+  indexTap: function () {
+    wx.redirectTo({
+      url: '../index/index'
+    })
+  },
   hideToast:function(){
     this.setData({
           bookToastHidden:true

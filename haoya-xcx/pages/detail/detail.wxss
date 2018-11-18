@@ -3,18 +3,20 @@
 }
 .ar_coverpath{
     width:100%;
-    margin:0;
-    box-sizing:border-box;
+    margin:0rpx;
+    padding:0rpx;
+    height:300rpx;
 }
 .ar_coverpath image{
     width:100%;
-    height:390rpx;
+    height: 100%;
 }
 .ar_cont{
+  width:92%;
     padding:0rpx 60rpx;
     font-size:30rpx;
     background: #fff;
-    margin-bottom:40rpx;
+    margin-bottom:90rpx;
     line-height: 45rpx;
     color:#666666;
 }
@@ -29,6 +31,15 @@
     color: #e64340;
     margin-left:60rpx;
 }
+.ar_cont .ar_tip{
+    background-color: rgb(250, 250, 198);
+}
+.ar_cont .ar_tip .ar_desc{
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+}
 .ar_line{
     width:100%;
     height:1rpx;
@@ -41,5 +52,12 @@
     font-size: 32rpx;
     color:#fff;
     border-radius: 0rpx;
-    margin:40rpx 0rpx 10rpx;
+    margin:30rpx 0rpx 10rpx;
+}
+.ar_phone{
+    background:#cccbcb;
+    font-size: 32rpx;
+    color:#fff;
+    border-radius: 0rpx;
+    margin:30rpx 0rpx 10rpx;
 }

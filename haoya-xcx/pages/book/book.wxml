@@ -4,7 +4,7 @@
         <image src="../../images/banner_02.png" mode="aspectFill"></image>
     </view>
 
-    <view class="ar_picker">
+    <!-- <view class="ar_picker">
         <view class="ar_picker_wrap">
         <picker bindchange="bindAddrPickerChange" value="{{addrIndex}}" range="{{addrArray}}">
             <view>
@@ -12,10 +12,17 @@
             </view>
         </picker>
         </view>
-    </view>
+    </view> -->
 
     <view class="ar_cont">
-        <text class="ar_cont_h1">服务时间</text>
+        <text class="ar_cont_h1">联系人:</text>
+        <input type="text" placeholder="请输入联系人" class="input_msg" placeholder-style="font-family:'微软雅黑'"/>
+        <view class='mt20'>
+            <text class="ar_cont_h1">联系电话:</text>
+        <input type="text" placeholder="请输入联系电话" class="input_msg" placeholder-style="font-family:'微软雅黑'"/>
+        </view>
+    <view class='mt20'>
+        <text class="ar_cont_h1">用车时间</text>
         <view class="ar_date_time">
             <view class="ar_date">
                 <image src="../../images/date.png"></image>
@@ -34,11 +41,20 @@
                 </picker>
             </view>
         </view>
-
-        <text class="ar_cont_h1">留言信息</text>
+        </view>
+        <view class='mt20'>
+            <text class="ar_cont_h1">上车地点:</text>
+        <input type="text" placeholder="请输入上车地点" class="input_msg" placeholder-style="font-family:'微软雅黑'"/>
+        </view>
+        <view class='mt20'>
+            <text class="ar_cont_h1">下车地点:</text>
+        <input type="text" placeholder="请输入下车地点" class="input_msg" placeholder-style="font-family:'微软雅黑'"/>
+</view>
+<!-- <view class='mt20'>
+        <text class="ar_cont_h1">客户备注:</text>
 
         <input type="text" placeholder="输入信息" class="input_msg" placeholder-style="font-family:'微软雅黑'"/>
-
+ </view> -->
         <button class="ar_book" bindtap="bindToastTap">确认预定</button>
         <toast hidden="{{bookToastHidden}}"  bindchange="hideToast">
         预定成功

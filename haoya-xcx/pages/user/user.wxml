@@ -1,6 +1,6 @@
 <!--user.wxml-->
 
-<view class="container">
+<!-- <view class="container">
   <view class="user_base_info">
     <view class="user_avatar">
         <image src="{{userData.avatar}}"></image>
@@ -25,4 +25,45 @@
     <navigator url="../edit_addr/edit_addr" >新增地址 +</navigator>
  </view>
   
+</view> -->
+<view class='user_all'>
+  <!-- header start -->
+  <view class="user-header">
+    <view wx:if="{{userInfo.avatarUrl}}">
+      <view class="user-img">
+        <image class="user-img" src="{{userInfo.avatarUrl}}"></image>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="user-img">
+        <image class="user-img" src="../../images/user_default.png"></image>
+      </view>
+    </view>
+
+    <view class="login-btn" bindtap="loginFun">微信授权登录</view>
+  </view>
+  <!-- / header end -->
+
+  <!-- article start -->
+  <view class="user-article mt">
+    <navigator url="">
+      <view class="user-order">
+        <text class="order-all">全部订单</text>
+        <view class="order-look">
+          <view class="icon-right">></view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <view class="user-article">
+    <navigator>
+      <view class="user-order" bindtap="calling">
+        <text class="order-all">联系客服</text>
+        <view class="order-look">
+          <view class="icon-right">></view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+  <!-- / article end -->
 </view>

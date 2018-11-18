@@ -11,7 +11,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#37383c",
-    "navigationBarTitleText": "美容",
+    "navigationBarTitleText": "昊雅租车",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {
@@ -26,7 +26,7 @@
       "selectedIconPath":"images/index_icon_HL.png"
     }, {
       "pagePath": "pages/technician/technician",
-      "text": "技师",
+      "text": "分类",
       "iconPath":"images/skill_icon.png",
       "selectedIconPath":"images/skill_icon_HL.png"
     }, {

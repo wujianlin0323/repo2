@@ -13,7 +13,7 @@
     </view>
   </view>
   <!--address picker-->
-  <view class="ar_picker">
+  <!-- <view class="ar_picker">
      <view class="ar_picker_wrap">
         <picker bindchange="bindAddrPickerChange" value="{{addrIndex}}" range="{{addrArray}}">
             <view>
@@ -21,7 +21,7 @@
             </view>
         </picker>
      </view>
-  </view>
+  </view> -->
   <!--list-->
   <view class="nav_section">
     <view wx:if="{{list}}">
@@ -45,9 +45,12 @@
                     <view>{{item.message}}</view>
                 </view>
                 <!--book-->
-                <view class="section_book" >
-                        <view>{{item.distance}}</view>
+                <view class="section_book" bindtap="bookTap" data-aid="{{item.id}}">
+                        <text>预约</text>
                 </view>
+                <!-- <view class="section_book" >
+                        <view>{{item.distance}}</view>
+                </view> -->
             </view>
             
         </block>
