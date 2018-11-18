@@ -211,7 +211,7 @@ image{width: 100%;vertical-align: top;display: block;}
 .sroom-r {
     width: 54.67%;
     height: 361rpx;
-    background-color: yellow;
+    background-color: white;
 }
 .sroom-r navigator {
     width: 100%;

@@ -31,10 +31,10 @@
   </view> -->
   <!--热门专题 begin-->
 	<view class="some-room mt30 clearfix">
-		<view class="sroom-l box-sizing fl"><navigator url=""><image src="../../images/default_pic.png" alt=""></image></navigator></view>
+		<view class="sroom-l box-sizing fl"><navigator url=""><image src="../../images/index1.jpg" alt=""></image></navigator></view>
 		<view class="sroom-r fr">
-			<view><navigator url=""><image src="../../images/default_pic.png" alt=""></image></navigator></view>
-			<view><navigator url=""><image src="../../images/default_pic.png" alt=""></image></navigator></view>
+			<view><navigator url=""><image src="../../images/index2.jpg" alt=""></image></navigator></view>
+			<view><navigator url=""><image src="../../images/index3.jpg" alt=""></image></navigator></view>
 		</view>
 	</view>
 <!--热门专题 end-->
