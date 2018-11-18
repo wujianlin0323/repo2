@@ -1,4 +1,13 @@
 /**index.wxss**/
+page{
+  min-width: 320px;
+  font: 14px/150% "微软雅黑", Verdana, Arial, Helvetica, sans-serif;
+  color: #222;
+  -webkit-text-size-adjust: none;
+  padding: 0;
+  margin: 0;
+  background-color: #eeeeee;
+}
 /* 轮播图 */
 .swiper{
     width:100%;
@@ -117,6 +126,9 @@
 /* 导航对应内容项 */
 .nav_section{
     width:100%;
+    background-color: white;
+    margin-top: 30rpx;
+    
 }
 .nav_section_items{
     display:flex;
@@ -230,34 +242,48 @@ image{width: 100%;vertical-align: top;display: block;}
     height: 177rpx;
 }
 /*一些科室end*/
-
+.floor-title {
+    height: 96rpx;
+    line-height: 96rpx;
+    text-align: center;
+    color: #222;
+    font-size: 34rpx;
+    font-weight: bold;
+    position: relative;
+    background-color: white;
+}
+.floor-title text {
+    color: #b9e1f0;
+    font-size: 30rpx;
+    padding-right: 14rpx;
+}
+.floor-title icon{
+  position: absolute;
+    top: 40rpx;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+    border-top: 10rpx solid transparent;
+    border-bottom: 10rpx solid transparent;
+    border-left: 10rpx solid #222222;
+}
 .like-top {
-    width: 520rpx;
+    width: 100%;
     height: 30rpx;
-    line-height: 30rpx;
+    line-height: 20rpx;
     position: relative;
     color: #888888;
     font-size: 30rpx;
-    margin: 27rpx auto;
+    /* margin: 27rpx auto; */
 }
-.liketop-name {
-    position: absolute;
-    width: 194rpx;
-    height: 30rpx;
-    left: 163rpx;
-    top: 0;
-    background: #eeeeee url(../images/likestar.png) no-repeat 18rpx 4rpx;
-    background-size: 26rpx 22rpx;
-    z-index: 2;
-    text-align: center;
-    text-indent: 52rpx;
-}
+
 .liketop-line {
     position: absolute;
     width: 100%;
     height: 1px;
     background-color: #e0e0e0;
-    top: 14.5rpx;
+    top: 5rpx;
     left: 0;
     z-index: 1;
 }

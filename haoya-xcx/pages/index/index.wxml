@@ -40,8 +40,8 @@
 <!--热门专题 end-->
   <!--list-->
   <view class="nav_section">
+			<view class="floor-title">热门推荐 <text>HOT</text></view>	  
   		<view class="like-top">
-			<view class="liketop-name">猜你喜欢</view>
 			<view class="liketop-line"></view>
 		  </view>
     <view wx:if="{{list[curIndex]}}">
